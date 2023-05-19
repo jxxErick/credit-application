@@ -3,7 +3,7 @@ package com.jxxe.creditrequestsystem.domain
 import jakarta.persistence.*
 
 @Entity
-@Table(name = "customer")
+
 data class Customer(
 
     @Column(nullable = false) var firstName: String = "",

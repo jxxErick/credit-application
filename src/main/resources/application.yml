@@ -2,7 +2,12 @@ spring:
   datasource:
     url: jdbc:h2:mem:credit_application_system_db
     username: jax
-    password: 123
+    password:
+  jpa:
+    show-sql: true
+    properties:
+      hibernate:
+        format_sql: true
   h2:
     console:
       enabled: true
