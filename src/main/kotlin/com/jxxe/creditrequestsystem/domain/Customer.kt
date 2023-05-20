@@ -1,6 +1,7 @@
 package com.jxxe.creditrequestsystem.domain
 
 import jakarta.persistence.*
+import java.math.BigDecimal
 
 @Entity
 
@@ -12,7 +13,7 @@ data class Customer(
     @Column(nullable = false, unique = true) var email: String = "",
     @Column(nullable = false) var password: String = "",
     @Embedded @Column(nullable = false) var address: Address = Address(),
-
+    @Column(nullable = false) var income: BigDecimal = BigDecimal.ZERO,
     @OneToMany(fetch = FetchType.LAZY, cascade = [CascadeType.REMOVE], mappedBy = "customer")
     var credits: List<Credit> = mutableListOf(),
 
