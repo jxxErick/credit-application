@@ -57,7 +57,7 @@ class CreditRepositoryTest {
         //given
         val customerId: Long =  1L
         //when
-        val creditList: List<Credit> = creditRepository.findAllByCustomerId(customerId)
+        val creditList: List<Credit> = creditRepository.findAllByCustomer(customerId)
         //then
         Assertions.assertThat(creditList).isNotEmpty
         Assertions.assertThat(creditList.size).isEqualTo(2)
@@ -76,13 +76,13 @@ class CreditRepositoryTest {
         customer = customer
     )
     private fun buildCustomer(
-        firstName: String = "Cami",
-        lastName: String = "Cavalcante",
+        firstName: String = "erick",
+        lastName: String = "dantas",
         cpf: String = "28475934625",
-        email: String = "camila@gmail.com",
+        email: String = "ericksdantas144@gmail.com",
         password: String = "12345",
         zipCode: String = "12345",
-        street: String = "Rua da Cami",
+        street: String = "Rua do erick",
         income: BigDecimal = BigDecimal.valueOf(1000.0),
     ) = Customer(
         firstName = firstName,
@@ -100,4 +100,3 @@ class CreditRepositoryTest {
 }
 
 
-}
