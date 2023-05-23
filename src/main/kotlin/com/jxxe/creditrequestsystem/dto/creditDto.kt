@@ -2,7 +2,6 @@ package com.jxxe.creditrequestsystem.dto
 
 import com.jxxe.creditrequestsystem.domain.Credit
 import com.jxxe.creditrequestsystem.domain.Customer
-import jakarta.persistence.FieldResult
 import jakarta.validation.constraints.Future
 import jakarta.validation.constraints.Max
 import jakarta.validation.constraints.NotNull
@@ -18,7 +17,7 @@ data class creditDto(
 {
 fun toEntity(): Credit = Credit(
     creditValue = this.creditValue,
-    dayFisrtInstallment = this.dayFirstOfInstallment,
+    dayFirstInstallment = this.dayFirstOfInstallment,
     numberOfInstallments = this.numberOfInstallments,
     customer = Customer(id = this.customerId)
 )
