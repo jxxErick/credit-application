@@ -8,7 +8,7 @@ import jakarta.validation.constraints.NotNull
 import java.math.BigDecimal
 import java.time.LocalDate
 
-data class creditDto(
+data class CreditDto(
     @field:NotNull(message = "nao pode estar vazio")val creditValue: BigDecimal,
    @field:Future val dayFirstOfInstallment: LocalDate,
    @field:NotNull(message = "nao pode estar vazio") @field:Max(value = 48, message = "o numero de parcelas nao pode ser maior que 48") val numberOfInstallments: Int,
@@ -21,4 +21,6 @@ fun toEntity(): Credit = Credit(
     numberOfInstallments = this.numberOfInstallments,
     customer = Customer(id = this.customerId)
 )
+
+
 }
